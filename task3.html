@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio</title>
+  <style>
+    /* General Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0073e6, #005bb5);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #005bb5;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #004080;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #005bb5;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .skills, .projects, .experience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f4f4f4;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .card h3 {
+      color: #0073e6;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #333;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #0073e6;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JAYAVARAPU LIKHITHA</h1>
+    <p>Professional Developer | Expertise in Web Development</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello! I'm Likhitha, a passionate Developer with a strong background in Web Development. My goal is to deliver impactful solutions and drive innovation in Industry.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript, React.js, Node.js</p>
+        </div>
+        <div class="card">
+          <h3>Programming Languages</h3>
+          <p>Python, Java, C++</p>
+        </div>
+        <div class="card">
+          <h3>Tools & Platforms</h3>
+          <p>Git, Docker, AWS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Virtual Sports Platform</h3>
+          <p>An interactive MERN stack platform hosting virtual events for yoga and sports enthusiasts.</p>
+        </div>
+        <div class="card">
+          <h3>AI Chatbot</h3>
+          <p>Built a chatbot using Python and TensorFlow to assist users with customer queries.</p>
+        </div>
+        <div class="card">
+          <h3>Portfolio Site</h3>
+          <p>A responsive portfolio showcasing skills and projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="experience">
+        <div class="card">
+          <h3>Software Developer</h3>
+          <p>ABC Tech Solutions</p>
+          <p>Worked on building scalable web applications and improving performance metrics.</p>
+        </div>
+        <div class="card">
+          <h3>Intern - Frontend Developer</h3>
+          <p>XYZ Innovations</p>
+          <p>Developed interactive user interfaces using React.js and optimized for responsiveness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <div class="contact">
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Phone: +123 456 7890</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">View Profile</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 Your Name. All rights reserved.
+  </footer>
+</body>
+</html>

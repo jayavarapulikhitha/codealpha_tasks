@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .player {
+      background: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .player h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .cover {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: #0073e6;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      padding: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #005bb5;
+    }
+
+    .info {
+      margin-top: 10px;
+    }
+
+    .info p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="player">
+    <h1>Music Player</h1>
+    <div class="cover" id="cover"></div>
+    <div class="info">
+      <p id="title">Title: Loading...</p>
+      <p id="artist">Artist: Loading...</p>
+    </div>
+    <div class="controls">
+      <button id="prev">⏮</button>
+      <button id="play">▶</button>
+      <button id="next">⏭</button>
+    </div>
+  </div>
+
+  <script>
+    // Music data
+    const tracks = [
+      {
+        title: "Song One",
+        artist: "Artist A",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        cover: "https://via.placeholder.com/350x200?text=Song+One",
+      },
+      {
+        title: "Song Two",
+        artist: "Artist B",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        cover: "https://via.placeholder.com/350x200?text=Song+Two",
+      },
+      {
+        title: "Song Three",
+        artist: "Artist C",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        cover: "https://via.placeholder.com/350x200?text=Song+Three",
+      },
+    ];
+
+    // Player controls
+    let currentIndex = 0;
+    const audio = new Audio(tracks[currentIndex].src);
+    const playButton = document.getElementById("play");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+    const titleEl = document.getElementById("title");
+    const artistEl = document.getElementById("artist");
+    const coverEl = document.getElementById("cover");
+
+    // Update UI with current track info
+    function loadTrack(index) {
+      const track = tracks[index];
+      titleEl.textContent = Title: ${track.title};
+      artistEl.textContent = Artist: ${track.artist};
+      coverEl.style.backgroundImage = url(${track.cover});
+      audio.src = track.src;
+    }
+
+    // Play/pause functionality
+    let isPlaying = false;
+
+    function togglePlay() {
+      if (isPlaying) {
+        audio.pause();
+        playButton.textContent = "▶";
+      } else {
+        audio.play();
+        playButton.textContent = "⏸";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Navigate to the previous track
+    function prevTrack() {
+      currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+      loadTrack(currentIndex);
+      if (isPlaying) audio.play();
+    }
+
+    // Navigate to the next track
+    function nextTrack() {
+      currentIndex = (currentIndex + 1) % tracks.length;
+      loadTrack(currentIndex);
+      if (isPlaying) audio.play();
+    }
+
+    // Event listeners
+    playButton.addEventListener("click", togglePlay);
+    prevButton.addEventListener("click", prevTrack);
+    nextButton.addEventListener("click", nextTrack);
+
+    // Load the initial track
+    loadTrack(currentIndex);
+  </script>
+</body>
+</html>
